@@ -64,6 +64,8 @@ public class ClipBordUtils {
             // flutter输入框会调用获取剪切板 合规问题屏蔽掉
             if ("getClipboardData".equals(method.getName()) && !enableClipbord) {
                 return "";
+            }else if ("clipboardHasStrings".equals(method.getName()) && !enableClipbord) {
+                return new Boolean(false);
             }
             return method.invoke(real, args);
         }

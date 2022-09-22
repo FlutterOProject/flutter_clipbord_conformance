@@ -11,4 +11,9 @@ class FlutterClipbordConformance {
     return enableClipbord;
   }
 
+  static Future<String?> disableClipbord() async {
+    final String? disableClipbord = await _channel.invokeMethod('disableClipbord');
+    return disableClipbord;
+  }
+
 }
